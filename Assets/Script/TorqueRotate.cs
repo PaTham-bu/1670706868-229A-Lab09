@@ -2,10 +2,10 @@ using Unity.Multiplayer.PlayMode;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class AngularVelocity : MonoBehaviour
+public class TorqueRotate : MonoBehaviour
 {
 
-    public float angularSpeed = 5f;
+    public float TorqueSpeed = 5f;
     private Rigidbody rb;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -16,14 +16,10 @@ public class AngularVelocity : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Keyboard.current.aKey.isPressed)
+        if (Keyboard.current.dKey.isPressed)
         {
-            rb.angularVelocity = new Vector3(0f, angularSpeed, 0f);
+            rb.angularVelocity = new Vector3(0f, 0f, TorqueSpeed);
         }
-        else 
-        { 
-            rb.angularVelocity = new Vector3(0, 0, 0);
-        
-        }
+     
     }
 }
